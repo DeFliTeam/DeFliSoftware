@@ -1,0 +1,31 @@
+{% api-method method="get" host="https://defli.org/api" path="/v1/hotspots" %} {% api-method-summary %} 
+
+{
+  "data": [
+    {
+      "lng": -101.3966587555984285,
+      "lat": 22.784056668023544,
+      "status": {
+        "online": "online",
+        "height": 112372
+      },
+      "score_update_height": 112372,
+      "score": 89,
+      "owner": "77nf9585ng00Fj884MFK89aggdj4ngg9sa",
+      "nonce": 1,
+      "name": "UUIS+38375595-FFHG-4848F-3KFFK",
+      "location": "884730405934",
+      "geocode": {
+        "short_street": "Rodeo Drive",
+        "short_state": "CA",
+        "short_country": "US",
+        "short_city": "LA",
+        "long_street": "Rodeo Drive",
+        "long_state": "California",
+        "long_country": "United States",
+        "long_city": "Los Angeles",
+        "city_id": "jfjf985jfkd995jdmfg9g94ffnfn3Qw"
+      },
+      "block_added": 112731,
+      "block": 112732,
+      "address": "11drxp9903jdjf94jsjjvovirhf77693f"
