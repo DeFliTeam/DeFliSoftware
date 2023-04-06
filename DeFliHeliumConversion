@@ -1,0 +1,98 @@
+# Instruction Steps for Installing to DeFliSoftware to Helium Hotspot 
+
+DeFli provides two methodologies for installing DeFli Software to your Helium Hotspot 
+
+#1 Pre-installed SD Card- 
+#2 Flash from File to eMMC
+
+Raspberry Pi Based Devices (Full RPi Board) 
+
+Open up your Helium Hotspot to reveal the Raspberry Pi Board
+Detach the Raspberry Pi Board and remove the SD Card
+Insert the provided DeFli Pre-Flashed, Bootable SD Card. Connect power by the USB-C connector.
+Insert the DeFli USB ADS-B Transponder in to the USB socket on the Raspberry Pi Board
+Re-Connect normal power to the Raspberry Pi Board and Re-boot. Ensure the Ethernet cable is connected during the first boot 
+
+Raspberry Pi Based Devices (Compute Module) 
+
+Open up your Helium Hotspot to reveal the Raspberry Pi Board and detach the Compute Module
+If you are not using the provided Waveshare IO board please ensure that you have used a jumper to disable eMMC boot.
+Plug a USB cable from your computer into the 'USB Slave' micro USB port on the IO Board, and plug in power. 
+Download the RpiBoot Utility to your computer using git clone --depth=1 https://github.com/raspberrypi/usbboot or this link https://github.com/raspberrypi/usbboot
+If you are using a WIndows computer simply search for and install the drivers from your download then skip to Point 10.
+If you are using MacOS please open a terminal and enter command 'brew install pkconfig libusb' then skip to Point 10.
+If you are using a Linux please open a terminal and enter command 'sudo apt install -y libusb-1.0-0-dev'
+Access the usbboot project directory with 'cd usbboot' From within the usbboot project directory run the command 'make'.
+With the Waveshare board or IO board connected and powered on run command 'sudo ./rpiboot The drive will then popup on your computer.
+Download the correct DeFli image for your operating system from file server (www.defli.org/file-server)
+Download Balena etcher from www.balena.io/etcher 
+Click "Flash from File" and select the file location that you saved the DeFli image
+In the middle of the menu select "target" and choose the Raspberry Pi Board.
+Click "Flash"
+Plug in the USB DeFli ADS-B Adapter
+Reboot your Raspberry Pi Board with the Ethernet cable connected. 
+
+Rockchip Boards (Not Bobcat or BrowanMerryIoT) 
+
+Open your Helium Hotspot outer casing
+Locate the SD card slot.
+Insert the provided SD Card that has been pre-flashed with DeFli image.
+Connect the power adapter to the Helium Hotspot via the USB-C and allow it to power up.
+The Blue LED will start flashing, once it has stopped flashing the image has been flashed to the eMMC.
+Remove the power adapter and the SD Card (if the board is eMMC based). 
+Attach the USB DeFli USB ADS-B adapter.
+Connect the ethernet cable to the device.
+Connect the power adapter and power on.
+
+Please note that the Rockchip installation will undertake the following actions automatically:
+
+The board will boot from the SD Card which contains both a Linux installation and the DeFli Rockchip Image (partitioned). The instruction automatically deployed is:
+
+sudo dd if=rockpi4_debian_stretch_defli_v2.img of=/dev/mmcblk1 bs=1M
+
+ If you have any issue then you may need to connect GPIO Pins 23 and 25. 
+ 
+ Rockchip Boards (Bobcat & BrowanMerryIoT) 
+ 
+Open your Helium Hotspot outer casing
+Remove the Rockchip Board
+Connect USB port 3 to your computer
+Put your board in to Maskrom mode by pressing button "2" as per the image below
+With the Maskrom key pressed, power on the board and then release the Maskrom key
+If you are installing by Linux or MacOS please download the rkdevelopment tool. If you are using windows please download the RKDevTool. https://wiki.radxa.com/Rockpi4/install/rockchip-flash-tools
+
+On Linux/MacOS
+
+Run the following command from the terminal "sudo rkdeveloptool ld # List the device DevNo=1 Vid=0x2207,Pid=0x330c,LocationID=305 Maskrom" 
+Then enter this command "sudo rkdeveloptool db rk3399_loader_v1.27.126.bin"
+Write the DeFli to the eMMC with the following command "sudo rkdeveloptool wl 0 /path/to/defli-bobcat-gpt.img" This is the image file provided by DeFli following your purchase.
+Reboot the device with command "sudo rkdeveloptool rd"
+Your Bobcat will now boot with the DeFli software.
+
+On Windows
+
+Double click the RKDevTool.exe
+Select the loader 
+Select the DeFli image and click the right last columns in the Image row and choose the image you want to flash. This will end with "defli-bobcat-win-gpt.img"
+Press "Run". You will see the content in the red box on the right. When the progress reaches 100%, the download is completed, you can then disconnect the board from your computer and restart.
+
+NXP Boards 
+
+Open Your Helium Hotspot outer casing
+Remove the NXP Board
+Connect the NXP Board to your computer using the USB-C Slave Port
+Download one of the following tools: LInux- minicom  Windows- Teraterm or MacOS- MacTerm
+Set the connection baudrate to 115200 with no hardware flow control
+Power up the NXP board and stop the auto boot process by pressing any character within the minicom/Teraterm/Macterm window
+Enable the UMS gadget for the eMMC using command U-Boot > ums 0 mmc 1 within the minicom/teraterm/macterm window
+The USB (your board) will now show as an attached USB drive
+Download the S32 Flash tool. Select the USB as the target and the DeFli Image as the file. Press "Flash".
+Disconnect from the computer after 30 seconds.
+Reattach traditional power and connect ethernet, reboot the device.
+
+
+
+
+
+
+ 
