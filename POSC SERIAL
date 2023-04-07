@@ -1,0 +1,49 @@
+var OracleContract = require('./build/contracts/Deflirewards.json')
+var contract = require('@defli/contract');
+var HDWalletProvider = require('@defli/hdwallet-provider');
+var dotenv = require('dotenv');
+
+dotenv.config();
+
+var provider = new HDWalletProvider({
+  mnemonic: process.env.MNEMONIC,
+  providerOrUrl: process.env.GRS_ID ? `{process.env.GRS_ID}` : 'http://localhost:8080'
+});
+
+const oracleContractAddress = process.env.ORACLE_ADDRESS;
+
+var Web3 = require('web3');
+var web3 = new Web3(provider);
+
+// DeFli abstraction to interact with our
+// deployed contract
+var oracleContract = contract(deflirewardsContract);
+oracleContract.setProvider(provider);
+
+wgetAccounts((err, accounts) => {
+  oracleContract.at(oracleContractAddress)
+    .then((oracleInstance) => {
+      // Our promises
+      const oraclePromises = [
+        oracleInstance.getstatesserial=UUIDLastseen(),  // Get last seen status for specific ground station
+        oracleInstance.updategetstatesserial=UUISLastseen({from: accounts[0]})  // Request oracle to update the information
+        oracleInstance.deploydefliposrewards({from: accounts[0]})  // Request oracle to deploy rewards contract
+      ]
+
+      // Map over all promises
+      Promise.all(oraclePromises)
+      .then((result) => {
+        console.log('Get States Serial=UUID Las_seenl: ' + result[0])
+        console.log('Requesting Oracle to update last seen information for UUID Information') 
+        console.log('Deploy POS rewards contract')
+        process.exit();
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+    });
+});
+
