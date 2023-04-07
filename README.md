@@ -2,7 +2,7 @@
 
 The basic aim of the DeFli package is to forward data read from an ADS-B receiver to DeFli Network Servers and DeFli Blockchain
 
-It does this using a program, piaware, aided by some support programs.
+It does this using a program, DeFliSoftware, aided by some support programs.
 
     DeFliX - establishes an encrypted session to DeFli and forwards data
     DeFli-Config - used to configure DeFliSOftware like with a DeFli username and password
