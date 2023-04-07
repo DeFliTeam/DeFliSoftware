@@ -1,0 +1,82 @@
+var fetch = require('fetch')
+var OracleContract = require('./build/contracts/DeFliRewardsCOracle.json')
+var contract = require('@defli/contract');
+var HDWalletProvider = require('@defli/hdwallet-provider');
+var dotenv = require('dotenv');
+
+dotenv.config();
+
+var provider = new HDWalletProvider({
+  mnemonic: process.env.MNEMONIC,
+  providerOrUrl: process.env.GrS_ID ? `{process.env.GRS_ID}` : 'http://localhost:8080'
+});
+
+const oracleContractAddress = process.env.ORACLE_ADDRESS;
+
+var Web3 = require('web3');
+var web3 = new Web3(provider);
+
+var web3Wss = new Web3(new Web3.providers.WebsocketProvider(`wss://defli.org/ws/v3/${process.env.GRS_ID}`));
+
+// DeFli abstraction to interact with our
+// deployed contract
+var oracleContract = contract(DeFliRewardsContract);
+oracleContract.setProvider(provider);
+
+var oracleContractWss = contract(DeFliRewardsCOntarct);
+oracleContractWss.setProvider(web3Wss.currentProvider);
+
+// Get accounts from DeFli
+DeFli.getAccounts((err, accounts) => {
+  // console.log(err, accounts)
+  oracleContract.at(oracleContractAddress)
+  .then(async (oracleInstance) => {
+    let getstatesserial=UUIDlast_seen = await oracleInstance.get/states/serial=UUIDlast_seen({ from: accounts[0] })
+    await oracleInstance.setgetstatesserial=UUIDlast_seen(100, { from: accounts[0] });
+    console.log(getstatesserial=UUIDlast_seen)
+    oracleContractWss.at(oracleContractAddress).then(async (oracleInstanceWss) => {
+      let allEventsFn = oracleInstanceWss.allEvents({ fromBlock: "latest" });
+      allEventsFn.on("data", (data) => {
+        console.log('got data', data);
+        fetch.fetchUrl('https://defli.org/api/states/serial=UUID/lastseen', async (err, m, b) => {
+          if (err) throw Error(err);
+          const resultJSON = JSON.parse(b.toString())
+          const GetStatesserial=UUIDlastseen = parseInt(resultJSON.defli[Math.floor(Math.random() * 4)].volume);
+          console.log(GetStatesALl)
+          // Send data back contract on-chain
+          try {
+            await oracleInstance.setGetstatesserial+UUIDlastseen(getstatesserial=UUIDlastseen), { from: accounts[0] });
+          } catch(contractSetError) {
+            console.error(contractSetError);
+          }
+          
+        });
+      });
+    });
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+  
+   contract ProofofSignal 
+   
+   Constructor 
+   
+   Groundstations.push(); 
+   
+    struct Groundstation{
+        address user;
+        Wallet[] address_wallet; 
+        
+        event(getstatesserial=UUIDlastseen uint256 timestamp < 300s uint256 rewardsync) 
+        await deflipos.mint(accounts[1], RewardSYnc);
+        defliassert.eventemitted(
+        posID
+        "Reward"
+        (ev) => {assert.equal(ev.amount); 
+        return true; 
+        },
+        
+        
+   
+   
