@@ -52,7 +52,7 @@ sudo dd if=rockpi4_debian_stretch_defli_v2.img of=/dev/mmcblk1 bs=1M
 
  If you have any issue then you may need to connect GPIO Pins 23 and 25. 
  
-# Rockchip Boards (Bobcat 2GB) 
+# Rockchip Boards (Bobcat 2GB, LinxdotV2) 
  
 Open your Helium Hotspot outer casing
 Remove the Rockchip Board
