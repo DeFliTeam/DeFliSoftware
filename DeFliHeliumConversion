@@ -64,7 +64,7 @@ If you are installing by Linux or MacOS please download the rkdevelopment tool. 
 On Linux/MacOS
 
 Run the following command from the terminal "sudo rkdeveloptool ld # List the device DevNo=1 Vid=0x2207,Pid=0x330c,LocationID=305 Maskrom" 
-Then enter this command "sudo rkdeveloptool db rk3566loader.bin"
+Then enter this command "rkdeveloptool db rk3566_spl_loader_ddr1056_v1.06.110.bin"
 Write the DeFli to the eMMC with the following command "sudo rkdeveloptool wl 0 /path/to/defli-bobcat-gpt.img" This is the image file provided by DeFli following your purchase.
 Reboot the device with command "sudo rkdeveloptool rd"
 Your Bobcat will now boot with the DeFli software.
