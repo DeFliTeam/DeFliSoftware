@@ -57,8 +57,8 @@ sudo dd if=rockpi4_debian_stretch_defli_v2.img of=/dev/mmcblk1 bs=1M
 Open your Helium Hotspot outer casing
 Remove the Rockchip Board
 Connect USB port 3 to your computer
-Put your board in to Maskrom mode by pressing button "2" as per the image below
-With the Maskrom key pressed, power on the board and then release the Maskrom key
+Put your board in to Maskrom mode by pressing and holding button "2" as per the image below
+With the Maskrom key pressed, power on the board and then release the Maskrom key after 3 seconds
 If you are installing by Linux or MacOS please download the rkdevelopment tool. If you are using windows please download the RKDevTool. https://wiki.radxa.com/Rockpi4/install/rockchip-flash-tools
 
 On Linux/MacOS
