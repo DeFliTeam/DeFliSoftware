@@ -77,9 +77,11 @@ Your Bobcat will now boot with the DeFli software.
 
 Note- If your device does not boot, then attempt line 67 with the SPI Flash button pressed down 
 
-On Windows
+On Windows 
+Download and extract DriverAssistant_v4.91.zip from https://wiki.kobol.io/helios64/files/maskrom/DriverAssitant_v4.91.zip 
+Run DriverInstall.exe under the extracted folder and press Install Driver.
 
-Double click the RKDevTool.exe
+Double click the Driver Install
 Select the loader (rk356x_spl_loader_ddr1056_v1.06.110.bin)
 Select the DeFli image and click the right last columns in the Image row and choose the image you want to flash. This will end with "defli-bobcat-win-gpt.img"
 Press "Run". You will see the content in the red box on the right. When the progress reaches 100%, the download is completed, you can then disconnect the board from your computer and restart.
