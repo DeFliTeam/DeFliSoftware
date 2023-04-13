@@ -1,0 +1,17 @@
+
+# Maskrom Mode 
+
+To enable writing of DeFli Images to a RockPi Board we must first put the board in to MASKROM mode.
+
+The following images show how to achieve this 
+
+RK3566 Model 
+
+<a href="https://ibb.co/XkFtzKQ"><img src="https://i.ibb.co/bRNXrC0/Zidoo-M6-e-MMC-D0-GND.png" alt="Zidoo-M6-e-MMC-D0-GND" border="0"></a>
+
+<a href="https://ibb.co/vZDBgmQ"><img src="https://i.ibb.co/J5Cd02y/Rockchip-RK3566-maskrom-mode-720x430.webp" alt="Rockchip-RK3566-maskrom-mode-720x430" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>image hosting facebook</a><br /> 
+
+PX30 Model 
+
+<a href="https://ibb.co/jysw5Zq"><img src="https://i.ibb.co/3pQFsYV/maskrom.jpg" alt="maskrom" border="0"></a> 
+
