@@ -1,0 +1,24 @@
+# Transaction Fee Schedule
+
+The following is a list of the current set of fees required for various transactions, along with their details. 
+Transaction fees are paid in FLIGHT Tokens or ORBIT Tokens. 
+(Note that the cost is not shown in DEFLI OR DESKY as this number is variable based on the current $USD/DEFLI/DESKY price as defined by the Price Oracle.)
+
+SEND DEFLI- Transfer DEFLI between wallets- Cost in FLIGHT= Variable   Cost in USD= Variable 
+SEND DESKY- Transfer DESKY between wallets- Cost in ORBIT= Variable   Cost in USD= Variable 
+
+LTE ROUTING- Transmit C2 Messages from Ground Station VPC to UA. Metered per 1mb- Cost in FLIGHT= 1  Cost in USD= $0.001 
+DATA DRAW- Draw down satellite data from Ground Station NS to User Server. Metered per 1mb- Cost in ORBIT= 1   Cost in USD= $0.001 
+
+ADD DEFLI or CONVERSION GS- Add a DeFli or Helium Converted Ground Station to the blockchain.   Cost in FLIGHT= 15000  Cost in USD 15 
+ADD DESKY or COnversion GS- Add a DeSKy or Helium Convetred Ground Station to the blockchain.   Cost in ORBIT= 10000   COst in USD 10 
+
+ADD SELF BUILD GS TO DEFLI- Add a self-built DeFli Ground Station to the blockchain.    Cost in FLIGHT= 42000  Cost in USD 42 
+ADD SELF BUILD GS TO DESKY- Add a self-built DeSKy Ground Station to the blockchain.    Cost in ORBIT= 42000  Cost in USD 42 
+
+Re-Assertion of Ground Station DEFLI- 2nd Assertion of Long/Lat for DEFLI GS's.         Cost in FLIGHT= 5000  Cost in USD 5 
+Re-Assertion of Ground Station DESKY- 2nd Assertion of Long/Lat for DESKY GS's.         Cost in ORBIT= 5000   COst in USD 5 
+
+Re-Assertion of Ground Station Elevation DEFLI- 2nd Assertion of Height Above Sea Level for DEFLI GS   Cost in FLIGHT= 5000  Cost in USD 5 
+Re-Assertion of Ground Station Elevation DESKY- 2nd Assertion of Height Above Sea Level for DESKY GS   Cost in ORBIT= 5000  Cost in USD 5
+
