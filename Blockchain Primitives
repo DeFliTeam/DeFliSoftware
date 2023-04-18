@@ -17,7 +17,7 @@ Approximately every 6 blocks mined marks the passing of an epoch, after which a 
 
 # Transactions 
 
-The DeFli blockchain currently has 12 native transaction types. Some appear in nearly every block mined while others were created to be used only once and will never be heard from again.
+The DeFli blockchain currently has 18 native transaction types. Some appear in nearly every block mined while others were created to be used only once and will never be heard from again.
 
 add ground station - Add a new gateway to the DeFli Network Network. 
 For the purposes of transactions, a “ground station” is the term for a DeFli-compliant Miner that is mining and providing network assets. 
