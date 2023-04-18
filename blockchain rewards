@@ -1,0 +1,32 @@
+
+How Do Ground Stations Earn Tokens? 
+
+DeFli Network has two distinct protocols: 
+
+DeFli Protocol- Earns DEFLI tokens for providing "ground station as a service" coverage for UA's 
+DeSky Protocol- Earns DESKY tokens for providing "ground station as a service" coverage for LEO and MEO Staellites. 
+
+The DEFLI token serves as the block reward for all ground stations acting as miners on the L1 DeFli Blockchain, irrespective of which protocol they participate in. 
+
+Every Epoch the elected tranche mines around 6 blocks on the blockchain. In each block, ground stations perform various types of work and are rewarded according to the below distribution 
+
+pos release- chain variable "pos release". Awarded to any ground station that has successfully committed a proof of signal release in accordance with the blockchain rules 
+pop release- chain variable "pop release". Awarded to any ground station that has successfully committed a proof of pass release in accordance with the blockchain rules
+
+block reward- chain variable "block reward". Awarded to any ground station that has contributed a block within the current epoch. 
+
+df percent- chain variable "df percent". Awarded to any ground station that has transmitted data to the VPS on DeFli network within current epoch 
+ds percent- chain variable "ds percent". Awarded to any ground station that has had a data draw down from the VPS on DeSky network within current epoch 
+
+# Target Reward Production Per Epoch 
+
+The target production rate for new DEFLI/DESKY tokens minted per month is 6,333,333
+
+Target block time is 300 seconds 
+Target epoch size is 6 blocks 
+
+Calculations 
+
+43,200 minutes per month / 30 minutes per epoch = 1440 epochs per month 
+6,333,333 DEFLI/DESKY minted per month / 1440 epochs = 4398 DEFLI/DESKY per Epoch 
+
