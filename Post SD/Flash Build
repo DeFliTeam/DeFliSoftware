@@ -1,0 +1,52 @@
+
+# Syncing your Ground Station 
+
+After loading the image to an SD card or flashing directly to the eMMC you need to sync your device to the DeFli back-end. 
+
+SSH in to your device running the DeFli Software 
+
+CD into the folder "opt/adsb" 
+
+Run command "nano docker-compose.yml" 
+
+Copy and paste the below content. You will need to set the parameters for: 
+
+UUID (generated on the defli host site http://defli-wallet.bubbleapps.io/) 
+FEEDER LAT- Enter your latitude 
+FEEDER LONG- ENter your longitude 
+
+version: '3.8'
+
+volumes:
+  readsbpb_rrd:
+  readsbpb_autogain:
+
+services:
+  readsb:
+    image: ghcr.io/sdr-enthusiasts/docker-readsb-protobuf:latest
+    tty: true
+    container_name: readsb
+    hostname: readsb
+    restart: always
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+    ports:
+      - 8080:8080
+    environment:
+      - TZ=${FEEDER_TZ}
+      - READSB_DEVICE_TYPE=deflirec
+      - READSB_rtlsdr_DEVICE=UUID
+      - READSB_GAIN=autogain
+      - READSB_LAT=${FEEDER_LAT}
+      - READSB_LON=${FEEDER_LONG}
+      - READSB_RX_LOCATION_ACCURACY=2
+      - READSB_STATS_RANGE=true
+      - READSB_NET_ENABLE=true
+    volumes:
+      - readsbpb_rrd:/run/collectd
+      - readsbpb_autogain:/run/autogain
+    tmpfs:
+      - /run/readsb
+      - /var/log 
+      
+ Then run command "docker compose up -d"
