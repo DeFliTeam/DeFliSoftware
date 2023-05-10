@@ -15,8 +15,6 @@ Re-Connect normal power to the Raspberry Pi Board and Re-boot. Ensure the Ethern
 
 # Raspberry Pi Based Devices (Compute Module) 
 
-Open up your Helium Hotspot to reveal the Raspberry Pi Board and detach the Compute Module
-If you are not using the provided Waveshare IO board please ensure that you have used a jumper to disable eMMC boot.
 Plug a USB cable from your computer into the 'USB Slave' micro USB port on the IO Board, and plug in power. 
 Download the RpiBoot Utility to your computer using git clone --depth=1 https://github.com/raspberrypi/usbboot or this link https://github.com/raspberrypi/usbboot
 If you are using a WIndows computer simply search for and install the drivers from your download then skip to Point 10.
