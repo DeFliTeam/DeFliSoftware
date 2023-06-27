@@ -1,0 +1,20 @@
+[Unit]
+Description=Defli installation GUI
+After=graphical.target
+Wants=graphical.target
+
+[Service]
+Type=simple
+Environment="QT_QPA_PLATFORM=vnc:size=1920x1200"
+Environment="XDG_RUNTIME_DIR=/home/pi/Documents/"
+Environment="RUNLEVEL=3"
+Environment="QT_DEBUG_PLUGINS=1"
+Environment="DISPLAY=:0"
+Environment="XAUTHORITY=/home/pi/.Xauthority"
+ExecStartPre=/usr/bin/printenv
+ExecStart=/usr/bin/python3 /home/pi/Defli_Installer/SourceCode/main.py
+Restart=on-abort
+IgnoreSIGPIPE=no
+
+[Install]
+WantedBy=multi-user.target
