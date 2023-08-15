@@ -1,0 +1,21 @@
+Start by opening the dhcpcd configuaration with the editor nano:
+
+sudo nano /etc/dhcpcd.conf
+
+At the end of the file add the following, modified to the IPs that apply to your network:
+
+    eth0 for ethernet and wlan0 for wifi, replace eth0 in the example with wlan0 if you're configuring for wifi
+    /24 is the same as a subment mask of 255.255.255.0 which is the most common for home networks.
+
+interface eth0
+static ip_address=192.168.0.4/24
+static routers=192.168.0.1
+static domain_name_servers=192.168.0.1
+
+Save: Ctrl-O and Enter Exit: Ctrl-X
+
+Restart dhcpcd to activate, expect the SSH session to disconnect:
+
+sudo systemctl restart dhcpcd
+
+Be aware if you enter an invalid address it might be necessary to either connect a keyboard and monitor or rewrite the sd-card with a fresh image. Also note that you should choose an IP address outside the DHCP range of your router or two computers could be assigned the same address which will cause severe issues for both computers with the same IP.
