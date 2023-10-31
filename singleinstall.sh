@@ -187,6 +187,8 @@ sudo dpkg -i ../readsb_*.deb
 sudo reboot 
 
 echo "set gain" 
+sudo bash -c "$(curl -L -o - https://github.com/wiedehopf/adsb-scripts/raw/master/autogain-install.sh)"
+hash -r
 sudo autogain1090
 
 echo "install mongodb" 
