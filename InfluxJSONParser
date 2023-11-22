@@ -1,0 +1,128 @@
+# Read formatted metrics from one or more HTTP endpoints
+[[inputs.http]]
+## One or more URLs from which to read formatted metrics
+urls = [
+"http://localhost/tar1090/data/aircraft.json"
+]
+
+## HTTP method
+# method = "GET"
+
+## Optional HTTP headers
+# headers = {"X-Special-Header" = "Special-Value"}
+
+## HTTP entity-body to send with POST/PUT requests.
+# body = ""
+
+## HTTP Content-Encoding for write request body, can be set to "gzip" to
+## compress body or "identity" to apply no encoding.
+# content_encoding = "identity"
+
+## Optional file with Bearer token
+## file content is added as an Authorization header
+# bearer_token = "/path/to/file"
+
+## Optional HTTP Basic Auth Credentials
+# username = "username"
+# password = "pa$$word"
+
+## OAuth2 Client Credentials. The options 'client_id', 'client_secret', and 'token_url' are required to use OAuth2.
+# client_id = "clientid"
+# client_secret = "secret"
+# token_url = "https://indentityprovider/oauth2/v1/token"
+# scopes = ["urn:opc:idm:__myscopes__"]
+
+## HTTP Proxy support
+# http_proxy_url = ""
+
+## Optional TLS Config
+# tls_ca = "/etc/telegraf/ca.pem"
+# tls_cert = "/etc/telegraf/cert.pem"
+# tls_key = "/etc/telegraf/key.pem"
+## Use TLS but skip chain & host verification
+# insecure_skip_verify = false
+
+## Optional Cookie authentication
+# cookie_auth_url = "https://localhost/authMe"
+# cookie_auth_method = "POST"
+# cookie_auth_username = "username"
+# cookie_auth_password = "pa$$word"
+# cookie_auth_headers = { Content-Type = "application/json", X-MY-HEADER = "hello" }
+# cookie_auth_body = '{"username": "user", "password": "pa$$word", "authenticate": "me"}'
+## cookie_auth_renewal not set or set to "0" will auth once and never renew the cookie
+# cookie_auth_renewal = "5m"
+
+## Amount of time allowed to complete the HTTP request
+# timeout = "5s"
+
+## List of success status codes
+# success_status_codes = [200]
+
+## Data format to consume.
+  ## Each data format has its own unique set of configuration options, read
+  ## more about them here:
+  ## https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
+  data_format = "json"
+
+  ## When strict is true and a JSON array is being parsed, all objects within the
+  ## array must be valid
+  json_strict = true
+
+  ## Query is a GJSON path that specifies a specific chunk of JSON to be
+  ## parsed, if not specified the whole document will be parsed.
+  ##
+  ## GJSON query paths are described here:
+  ##   https://github.com/tidwall/gjson/tree/v1.3.0#path-syntax
+  json_query = ""
+
+  ## Tag keys is an array of keys that should be added as tags.  Matching keys
+  ## are no longer saved as fields. Supports wildcard glob matching.
+  tag_keys = [
+    "aircraft",
+    
+  ]
+
+  ## Array of glob pattern strings or booleans keys that should be added as string fields.
+  json_string_fields = [“hex”,
+“flight”, 
+“type”,
+“alt_baro”,
+“alt_geom”,
+“gs”,
+“track”,
+“lat”, 
+“lon”, 
+,
+ ]
+
+  ## Name key is the key to use as the measurement name.
+  json_name_key = ""
+
+  ## Time key is the key containing the time that should be used to create the
+  ## metric.
+  json_time_key = "Local"
+
+  ## Time format is the time layout that should be used to interpret the json_time_key.
+  ## The time must be `unix`, `unix_ms`, `unix_us`, `unix_ns`, or a time in the
+  ## "reference time".  To define a different format, arrange the values from
+  ## the "reference time" in the example to match the format you will be
+  ## using.  For more information on the "reference time", visit
+  ## https://golang.org/pkg/time/#Time.Format
+  ##   ex: json_time_format = "Mon Jan 2 15:04:05 -0700 MST 2006"
+  ##       json_time_format = "2006-01-02T15:04:05Z07:00"
+  ##       json_time_format = "01/02/2006 15:04:05"
+  ##       json_time_format = "unix"
+  ##       json_time_format = "unix_ms"
+  json_time_format = ""
+
+  ## Timezone allows you to provide an override for timestamps that
+  ## don't already include an offset
+  ## e.g. 04/06/2016 12:41:45
+  ##
+  ## Default: "" which renders UTC
+  ## Options are as follows:
+  ##   1. Local               -- interpret based on machine localtime
+  ##   2. "America/New_York"  -- Unix TZ values like those found in https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  ##   3. UTC                 -- or blank/unspecified, will return timestamp in UTC
+  json_timezone = ""
+
